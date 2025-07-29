@@ -1,0 +1,105 @@
+* {
+    font-family: "JetBrainsMono Nerd Font Mono", monospace;
+    font-size: 15px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(43, 48, 59, 0.5));
+    border-bottom: 3px solid #000;
+    color: white;
+    border-radius: 20px;
+}
+
+#custom-archlinux, #clock, #backlight, #pulseaudio, #network, #bluetooth, #battery, #custom-poweroff {
+    padding: 0 10px;
+}
+
+#custom-archlinux, #custom-poweroff {
+    font-size: 22px;
+}
+
+#custom-archlinux, #clock {
+    background-color: #64727D;
+}
+
+#workspaces {
+    border: 1px solid #111;
+    border-radius: 20px;
+    margin: 0px;
+    font-weight: bolder;
+}
+
+#workspaces button {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1px 7px;
+    border-radius: 20px;
+    border: 1px solid #333;
+    margin: 4px 4px;
+    color: #dd4d2e;
+}
+
+#workspaces button:hover {
+    color: #ffffff;
+}
+
+#workspaces button.active {
+    padding: 1px 7px;
+    margin: 4px;
+    border-radius: 20px;
+    background-color: rgba(30, 30, 42, 0.5);
+    border: 1px solid #fff;
+    color: #ffffff;
+}
+
+#workspaces button.empty {
+    color: #a7a7a7;
+    font-weight: bolder;
+}
+
+#workspaces button.urgent {
+    border: 1px solid #dd7777;
+    color: #FFF;
+}
+
+#workspaces button.visible {
+    background: linear-gradient(to right, #dd4d2e, #C52E0D);
+    color: #222;
+}
+
+#backlight, #pulseaudio, #network, #bluetooth {
+    background-color: #dd4d2e;
+    color: black
+}
+
+#network, #bluetooth {
+    font-size: 22px;
+}
+
+#workspaces {
+    margin: 0 4px;
+}
+
+#backlight, #clock {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#bluetooth, #battery {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+#battery {
+    background-color: #ffffff;
+    color: black;
+}
+
+#custom-poweroff {
+    padding: 0 11px;
+    margin: 4px 0px 4px 0px;
+    border-radius: 20px;
+    background: linear-gradient(to right, #dd4d2e, #C52E0D);
+    border: 1px solid #111;
+    color: black;
+}
