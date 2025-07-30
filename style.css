@@ -1,105 +1,175 @@
+@define-color rosewater #f5e0dc;
+@define-color flamingo #f2cdcd;
+@define-color pink #f5c2e7;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color maroon #eba0ac;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color teal #94e2d5;
+@define-color sky #89dceb;
+@define-color sapphire #74c7ec;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color blueborder #4F77F7;
+
+@define-color base alpha(#000000, 0.1);
+/* @define-color surface alpha(@lavender, 0.15); */
+@define-color surface alpha(#000000, 0.5);
+@define-color text #cdd6f4;
+@define-color hoverBg alpha(@mauve, 1);
+@define-color hoverFg #000000;
+@define-color activeBg alpha(@mauve, 1);
+@define-color activeFg #000000;
+@define-color shadow alpha(@lavender, 0.25);
+
 * {
-    font-family: "JetBrainsMono Nerd Font Mono", monospace;
-    font-size: 15px;
-    min-height: 0;
+  all: unset;
+  font-size: 1rem;
+  font-weight: 900;
+  font-family:
+    "JetBrainsMono Nerd Font",
+    "Font Awesome 6 Free",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  background-clip: border-box;
 }
 
-window#waybar {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(43, 48, 59, 0.5));
-    border-bottom: 3px solid #000;
-    color: white;
-    border-radius: 20px;
+button {
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 999px;
+  color: @text;
+  box-shadow: 0px 0px 8px 4px @shadow inset;
+  transition:
+    all 50ms cubic-bezier(0.55, 0, 0.28, 1.682),
+    box-shadow 50ms ease-in-out,
+    background-color 200ms ease-in-out;
 }
 
-#custom-archlinux, #clock, #backlight, #pulseaudio, #network, #bluetooth, #battery, #custom-poweroff {
-    padding: 0 10px;
+button:hover {
+  color: @hoverFg;
+  background: @sapphire;
 }
 
-#custom-archlinux, #custom-poweroff {
-    font-size: 22px;
+button.active {
+  color: @activeFg;
+  background: @blueborder;
 }
 
-#custom-archlinux, #clock {
-    background-color: #64727D;
+tooltip {
+  opacity: 1;
 }
 
-#workspaces {
-    border: 1px solid #111;
-    border-radius: 20px;
-    margin: 0px;
-    font-weight: bolder;
+window#waybar.empty #window {
+  background-color: transparent;
+}
+
+#window {
+  margin-right: 8px;
+}
+
+#workspaces,
+#custom-appmenu,
+#quicklinks,
+#media,
+#hardware,
+#clock,
+#battery,
+#custom-exit {
+  background-color: @surface;
+  border-radius: 999px;
+  box-shadow: 0px 0px 8px 4px @shadow inset;
+}
+
+#media,
+#hardware,
+#clock,
+#battery,
+#custom-exit {
+  padding: 0 8px;
+}
+
+#custom-quicklink1,
+#custom-quicklink2,
+#custom-quicklink3,
+#custom-quicklink4,
+#custom-quicklink5,
+#custom-quicklink6,
+#custom-quicklink7,
+#custom-quicklink8,
+#custom-quicklink9,
+#custom-quicklink10 {
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+}
+#custom-quicklink1 {
+  /* margin-left: 0; */
+}
+
+#cpu,
+#memory,
+#disk {
+  padding-right: 0.5rem;
+}
+
+#custom-appmenu,
+#custom-notification {
+  font-size: 24px;
+  min-width: 32px;
+  min-height: 32px;
+  padding-right: 4px;
+  border-radius: 999px;
 }
 
 #workspaces button {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 1px 7px;
-    border-radius: 20px;
-    border: 1px solid #333;
-    margin: 4px 4px;
-    color: #dd4d2e;
+  margin-right: 2px;
+}
+#workspaces button:last-child {
+  margin-right: 0;
 }
 
-#workspaces button:hover {
-    color: #ffffff;
+#taskbar {
+  font-weight: normal;
+  font-style: normal;
 }
 
-#workspaces button.active {
-    padding: 1px 7px;
-    margin: 4px;
-    border-radius: 20px;
-    background-color: rgba(30, 30, 42, 0.5);
-    border: 1px solid #fff;
-    color: #ffffff;
+@keyframes blink {
+  to {
+    background-color: @activeBg;
+  }
 }
 
-#workspaces button.empty {
-    color: #a7a7a7;
-    font-weight: bolder;
+#battery.critical:not(.charging) {
+  background-color: @activeBg;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
-#workspaces button.urgent {
-    border: 1px solid #dd7777;
-    color: #FFF;
+#tray > .passive {
+  -gtk-icon-effect: dim;
 }
 
-#workspaces button.visible {
-    background: linear-gradient(to right, #dd4d2e, #C52E0D);
-    color: #222;
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @activeBg;
 }
 
-#backlight, #pulseaudio, #network, #bluetooth {
-    background-color: #dd4d2e;
-    color: black
+label:focus {
+  background-color: @activeBg;
 }
 
-#network, #bluetooth {
-    font-size: 22px;
+#backlight {
+  background-color: @activeBg;
 }
 
-#workspaces {
-    margin: 0 4px;
-}
-
-#backlight, #clock {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-}
-
-#bluetooth, #battery {
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
-
-#battery {
-    background-color: #ffffff;
-    color: black;
-}
-
-#custom-poweroff {
-    padding: 0 11px;
-    margin: 4px 0px 4px 0px;
-    border-radius: 20px;
-    background: linear-gradient(to right, #dd4d2e, #C52E0D);
-    border: 1px solid #111;
-    color: black;
+#custom-exit {
+  padding-left: 8px;
+  padding-right: 11px;
 }

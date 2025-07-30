@@ -1,94 +1,35 @@
-// Site to find icons: https://www.nerdfonts.com/cheat-sheet
 {
-    "layer": "top",
-    "height": 35,
-    "width": 1910,
-    "margin": 4,
-    "modules-left": ["custom/archlinux", "wlr/taskbar"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["backlight", "pulseaudio", "network", "bluetooth", "clock", "battery", "custom/poweroff"],
-
-    "custom/archlinux": {
-        "format": "",
-        "on-click": "rofi -show drun",
-        "tooltop": false
-    },
-
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "close",
-        "active-first": true
-    },
-
-    "hyprland/workspaces": {
-        "format": "{icon}",
-        "on-click": "activate",
-        "persistent-workspaces": {
-            "*": 5
-        },
-        "sort-by-number": true
-    },
-
-    "clock": {
-        	"format": " {:%I:%M %p}",
-        	"rotate": 0,
-        	"tooltip-format": "<span>{calendar}</span>",
-        	"calendar": {
-            		"mode": "month",
-            		"format": {
-                	    "months": "<span color='#ff6699'><b>{}</b></span>",
-                        "days": "<span color='#cdd6f4'><b>{}</b></span>",
-                	    "weekdays": "<span color='#7CD37C'><b>{}</b></span>",
-                	    "today": "<span color='#ffcc66'><b>{}</b></span>"
-            	}
-            }
-    },
-
-    "backlight": {
-        "format": "{percent}% ",
-        "tooltip": false
-    },
-
-    "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-muted": "{volume}% 󰸈",
-        "format-icons": {
-            "headphone": "󰋋",
-            "default": "󰕿"
-        },
-        "scroll-step": 1,
-        "tooltip": false,
-        "on-click": "pavucontrol"
-    },
-
-    "network": {
-        "format-wifi": "{icon}",
-        "format-disconnected": "󰤭",
-        "format-disabled": "󰤭",
-        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-        "tooltip-format-wifi": "{essid} [{signalStrength}%]",
-        "tooltip-format-disconnected": "Disconnected"
-    },
-
-    "bluetooth": {
-        "format": "󰂯",
-        "format-disabled": "󰂲",
-        "tooltip-format": "{status}",
-        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}"
-    },
-
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% {icon}",
-        "format-plugged": "{capacity}% {icon}",
-        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    },
-
-    "custom/poweroff": {
-        "format": "",
-        "on-click": "wlogout",
-        "tooltip": false
-    }
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  "height": 16, // Waybar height (to be removed for auto height)
+  // "width": 1280, // Waybar width
+  "spacing": 8, // Gaps between modules (4px)
+  "margin-top": 8,
+  "margin-left": 8,
+  "margin-right": 8,
+  "mode": "dock",
+  "reload_style_on_change": true,
+  "include": [
+    "~/.config/waybar/modules.json",
+    "~/.config/waybar/quicklinks.json",
+    "~/.config/waybar/hardware.json",
+    "~/.config/waybar/media.json"
+  ],
+  "modules-left": [
+    "custom/appmenu",
+    "group/quicklinks",
+    "tray",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "hyprland/workspaces"
+  ],
+  "modules-right": [
+    "network",
+    "group/media",
+    "group/hardware",
+    "clock",
+    "battery",
+    "custom/exit"
+  ]
 }
