@@ -25,6 +25,7 @@
     "hyprland/workspaces"
   ],
   "modules-right": [
+    "bluetooth",
     "network",
     "group/media",
     "group/hardware",

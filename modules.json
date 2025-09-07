@@ -87,11 +87,12 @@
 
   // Bluetooth
   "bluetooth": {
+    "format": "󰂯",
     "format-disabled": "",
     "format-off": "",
     "interval": 30,
-    "on-click": "blueman-manager",
-    "format-no-controller": ""
+    "on-click": "kitty -e ~/.config/dmenu-scripts/bluectl.sh",
+    "tooltip-format-connected": "{device_alias}"
   },
 
   // Idle Inhibator
