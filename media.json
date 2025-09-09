@@ -1,13 +1,13 @@
 {
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-bluetooth": "{volume}% {icon} ",
-    "format-bluetooth-muted": "  {icon} ",
+    "format-bluetooth": "{volume}% {icon} ",
+    "format-bluetooth-muted": " ",
     "format-muted": " ",
     "format-icons": {
       "headphone": "",
-      "hands-free": "",
-      "headset": "",
+      "hands-free": "",
+      "headset": "",
       "phone": "",
       "portable": "",
       "car": "",
@@ -20,8 +20,8 @@
     "format": "{icon} {format_source}",
     "format-source": " {volume}%",
     "format-source-muted": " ",
-    "on-scroll-up": "amixer set Capture 5%+",
-    "on-scroll-down": "amixer set Capture 5%-",
+    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
     "on-click-right": "pavucontrol",
     "on-click": "amixer set Capture toggle"
   },

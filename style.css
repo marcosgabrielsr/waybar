@@ -1,12 +1,13 @@
+/* Defining Colors */
 @define-color blue #89b4fa;
 @define-color lavender #b4befe;
-@define-color blueborder #2163DE;
-@define-color bluehover #99B7F0;
+@define-color bordercolor #99B7F0;
+@define-color hovercolor #99B7F0;
+@define-color buttonbgcolor #FFF;
 @define-color colorbackground #252323;
 @define-color redexit #C52E0D;
 
 @define-color base alpha(#000000, 0.1);
-/* @define-color surface alpha(@lavender, 0.15); */
 @define-color surface alpha(#000000, 0.5);
 @define-color text #cdd6f4;
 @define-color hoverBg alpha(@mauve, 1);
@@ -17,7 +18,7 @@
 
 * {
   all: unset;
-  font-size: 1rem;
+  font-size: 0.87rem;
   font-weight: 900;
   font-family:
     "JetBrainsMono Nerd Font",
@@ -30,11 +31,13 @@
 }
 
 button {
-  min-width: 32px;
-  /* min-height: 32px; */
+  min-width: 20px;
+  min-height: 20px;
+  padding: 0;
+  margin: 5px;
   border-radius: 999px;
   color: @text;
-  box-shadow: 0px 0px 8px 4px @shadow inset;
+  box-shadow: 0px 0px 6px 3px @shadow inset;
   transition:
     all 50ms cubic-bezier(0.55, 0, 0.28, 1.682),
     box-shadow 50ms ease-in-out,
@@ -43,21 +46,24 @@ button {
 
 button:hover {
   color: @hoverFg;
-  background: @bluehover;
+  background: @hovercolor;
 }
 
 button.active {
   color: @activeFg;
-  background: @blueborder;
+  background: @buttonbgcolor;
 }
 
 tooltip {
   opacity: 1;
+  background: @colorbackground;
+  border: 2px solid @bordercolor;
+  border-radius: 10px;
 }
 
 window#waybar {
   background: @colorbackground;
-  border: 2px solid @blueborder;
+  border: 2px solid @bordercolor;
   color: white;
   border-radius: 10px;
 }
@@ -79,8 +85,9 @@ window#waybar {
 #hardware,
 #clock,
 #battery,
-#custom-exit {
-  padding: 0 8px;
+#custom-exit,
+#bluetooth {
+  padding: 0 6px;
 }
 
 #custom-quicklink1,
@@ -93,7 +100,7 @@ window#waybar {
 #custom-quicklink8,
 #custom-quicklink9,
 #custom-quicklink10 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin: 0 0.5rem;
 }
 #custom-quicklink1 {
@@ -106,12 +113,12 @@ window#waybar {
   padding-right: 0.5rem;
 }
 
-#custom-appmenu,
-#custom-notification {
-  font-size: 24px;
-  min-width: 32px;
+#custom-appmenu {
+  font-size: 20px;
+  min-width: 30px;
   /* min-height: 32px; */
-  padding-right: 4px;
+  padding-right: 2px;
+  margin-left: 3px;
   border-radius: 999px;
 }
 
@@ -171,5 +178,5 @@ label:focus {
 }
 
 #custom-appmenu:hover {
-  background-color: @blueborder;
+  background-color: @hovercolor;
 }

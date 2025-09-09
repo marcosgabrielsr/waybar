@@ -1,34 +1,20 @@
 {
-  // Workspaces
   "hyprland/workspaces": {
     "on-click": "activate",
     "active-only": false,
     "all-outputs": true,
-    "format": "{}",
+    "format": "{icon}",
     "format-icons": {
-      "urgent": "",
+      "urgent": "!",
       "active": "",
       "default": ""
     },
+
     "persistent-workspaces": {
-      "*": 5
+      "eDP-1": 5
     }
   },
 
-  // Hyprland Window
-  "hyprland/window": {
-    "rewrite": {
-      "(.*) - Zen Browser": "$1",
-      "(.*) - Brave": "$1",
-      "(.*) - Chromium": "$1",
-      "(.*) - Brave Search": "$1",
-      "(.*) - Outlook": "$1",
-      "(.*) Microsoft Teams": "$1"
-    },
-    "separate-outputs": true
-  },
-
-  // Rofi Application Launcher
   "custom/appmenu": {
     "format": "󰣇",
     "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings",
@@ -37,7 +23,6 @@
     "tooltip": false
   },
 
-  // Power Menu
   "custom/exit": {
     "format": "",
     "tooltip-format": "Powermenu",
@@ -45,34 +30,29 @@
     "tooltip": false
   },
 
-  // System tray
   "tray": {
     "icon-size": 24,
     "spacing": 8
   },
 
-  // Clock
   "clock": {
-    // "timezone": "America/New_York",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format": "󰥔 {0:%H:%M}",
     "format-alt": "󰥔 {0:%H:%M}   {0:%d-%m-%Y}"
   },
 
-  // Network
   "network": {
     "format": "{ifname}",
     "format-wifi": " ",
-    "format-disconnected": "󰲛 ",
+    "format-disconnected": " ",
     "tooltip-format": "  {ifname} via {gwaddri}",
-    "tooltip-format-wifi": "   {essid} ({signalStrength}%) [ {bandwidthDownBytes}  {bandwidthUpBytes}]",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) [ {bandwidthDownBytes}  {bandwidthUpBytes}]",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
     "interval": 1,
     "on-click": "kitty -e nmtui"
   },
 
-  // Battery
   "battery": {
     "states": {
       "warning": 30,
@@ -82,10 +62,10 @@
     "format-charging": "  {capacity}%",
     "format-plugged": "  {capacity}%",
     "format-alt": "{icon}  {time}",
-    "format-icons": [" ", " ", " ", " ", " "]
+    "format-icons": ["󰂎 ", "󰁺 ", "󰁻 ", "󰁼 ", "󰁽 ", "󰁾 ", "󰁿 ", "󰂀 ", "󰂁 ", "󰂂 ", "󰁹 "],
+    "format-icons-charging": [" ", " "]
   },
 
-  // Bluetooth
   "bluetooth": {
     "format": "󰂯",
     "format-disabled": "",
@@ -95,7 +75,6 @@
     "tooltip-format-connected": "{device_alias}"
   },
 
-  // Idle Inhibator
   "idle_inhibitor": {
     "format": "{icon}",
     "tooltip": true,
