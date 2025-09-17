@@ -4,8 +4,9 @@
 @define-color bordercolor #99B7F0;
 @define-color hovercolor #99B7F0;
 @define-color buttonbgcolor #FFF;
-@define-color colorbackground #252323;
-@define-color redexit #C52E0D;
+@define-color colorbackground #0D0E1A;
+@define-color redalert #C52E0D;
+@define-color yellowactive #F3F863;
 
 @define-color base alpha(#000000, 0.1);
 @define-color surface alpha(#000000, 0.5);
@@ -52,6 +53,11 @@ button:hover {
 button.active {
   color: @activeFg;
   background: @buttonbgcolor;
+}
+
+button.urgent {
+  color: @activeFg;
+  background: @redalert;
 }
 
 tooltip {
@@ -174,7 +180,7 @@ label:focus {
 }
 
 #custom-exit:hover {
-  background-color: @redexit;
+  background-color: @redalert;
 }
 
 #custom-appmenu:hover {

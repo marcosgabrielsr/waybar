@@ -26,7 +26,7 @@
   "custom/exit": {
     "format": "",
     "tooltip-format": "Powermenu",
-    "on-click": "wlogout",
+    "on-click": "",
     "tooltip": false
   },
 
@@ -59,7 +59,7 @@
       "critical": 15
     },
     "format": "{icon} {capacity}%",
-    "format-charging": "  {capacity}%",
+    "format-charging": "{icon} {capacity}%",
     "format-plugged": "  {capacity}%",
     "format-alt": "{icon}  {time}",
     "format-icons": ["󰂎 ", "󰁺 ", "󰁻 ", "󰁼 ", "󰁽 ", "󰁾 ", "󰁿 ", "󰂀 ", "󰂁 ", "󰂂 ", "󰁹 "],
