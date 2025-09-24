@@ -1,10 +1,11 @@
 /* Defining Colors */
 @define-color blue #89b4fa;
 @define-color lavender #b4befe;
-@define-color bordercolor #99B7F0;
+@define-color bordercolor #817E7E;
 @define-color hovercolor #99B7F0;
 @define-color buttonbgcolor #FFF;
-@define-color colorbackground #0D0E1A;
+/*@define-color colorbackground #0D0E1A;*/
+@define-color colorbackground #000;
 @define-color redalert #C52E0D;
 @define-color yellowactive #F3F863;
 
@@ -78,10 +79,9 @@ window#waybar {
 #custom-appmenu,
 #quicklinks,
 #media,
-#hardware,
 #clock,
 #battery,
-#custom-exit {
+#custom-appmenu {
   border-radius: 999px;
   margin-top: 4px;
   margin-bottom: 4px;
@@ -91,7 +91,6 @@ window#waybar {
 #hardware,
 #clock,
 #battery,
-#custom-exit,
 #bluetooth {
   padding: 0 6px;
 }
@@ -122,10 +121,11 @@ window#waybar {
 #custom-appmenu {
   font-size: 20px;
   min-width: 30px;
-  /* min-height: 32px; */
-  padding-right: 2px;
-  margin-left: 3px;
-  border-radius: 999px;
+  padding-right: 10px;
+}
+
+#workspaces {
+  padding-left: 4px;
 }
 
 #workspaces button {
@@ -170,19 +170,4 @@ label:focus {
 
 #backlight {
   background-color: @activeBg;
-}
-
-#custom-exit {
-  padding-left: 8px;
-  padding-right: 12px;
-  margin-right: 5px;
-  border-radius: 999px;
-}
-
-#custom-exit:hover {
-  background-color: @redalert;
-}
-
-#custom-appmenu:hover {
-  background-color: @hovercolor;
 }

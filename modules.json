@@ -23,22 +23,14 @@
     "tooltip": false
   },
 
-  "custom/exit": {
-    "format": "",
-    "tooltip-format": "Powermenu",
-    "on-click": "",
-    "tooltip": false
-  },
-
   "tray": {
-    "icon-size": 24,
+    "icon-size": 20,
     "spacing": 8
   },
 
   "clock": {
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "󰥔 {0:%H:%M}",
-    "format-alt": "󰥔 {0:%H:%M}   {0:%d-%m-%Y}"
+    "format": "{0:%H:%M - %A, %d}"
   },
 
   "network": {
@@ -46,7 +38,7 @@
     "format-wifi": " ",
     "format-disconnected": " ",
     "tooltip-format": "  {ifname} via {gwaddri}",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%) [ {bandwidthDownBytes}  {bandwidthUpBytes}]",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n[ {bandwidthDownBytes}  {bandwidthUpBytes}]",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
     "interval": 1,
@@ -58,9 +50,9 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon} {capacity}%",
+    "format": "{icon}{capacity}%",
     "format-charging": "{icon} {capacity}%",
-    "format-plugged": "  {capacity}%",
+    "format-plugged": " {capacity}%",
     "format-alt": "{icon}  {time}",
     "format-icons": ["󰂎 ", "󰁺 ", "󰁻 ", "󰁼 ", "󰁽 ", "󰁾 ", "󰁿 ", "󰂀 ", "󰂁 ", "󰂂 ", "󰁹 "],
     "format-icons-charging": [" ", " "]

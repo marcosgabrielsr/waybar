@@ -2,11 +2,11 @@
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
   "height": 16, // Waybar height (to be removed for auto height)
-  // "width": 1280, // Waybar width
+  // "width": 1900, // Waybar width
   "spacing": 8, // Gaps between modules (4px)
-  "margin-top": 8,
-  "margin-left": 8,
-  "margin-right": 8,
+  "margin-top": 2,
+  "margin-left": 2,
+  "margin-right": 2,
   "mode": "dock",
   "reload_style_on_change": true,
   "include": [
@@ -16,21 +16,18 @@
     "~/.config/waybar/media.json"
   ],
   "modules-left": [
-    "custom/appmenu",
-    "group/quicklinks",
-    "tray"//,
-    //"hyprland/window"
-  ],
-  "modules-center": [
     "hyprland/workspaces"
   ],
+  "modules-center": [
+    "clock"
+  ],
   "modules-right": [
+    "tray",
     "bluetooth",
     "network",
     "group/media",
     "group/hardware",
-    "clock",
     "battery",
-    "custom/exit"
+    "custom/appmenu"
   ]
 }
