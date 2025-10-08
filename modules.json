@@ -15,12 +15,9 @@
     }
   },
 
-  "custom/appmenu": {
-    "format": "󰣇",
-    "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings",
-    "on-click": "rofi -show drun -replace & sleep 0.2; hyprctl dispatch focuswindow '^(Rofi)'",
-    "on-click-right": "~/.config/notscripter/scripts/keybindings.sh",
-    "tooltip": false
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{0:%H:%M - %A, %d}"
   },
 
   "tray": {
@@ -28,16 +25,20 @@
     "spacing": 8
   },
 
-  "clock": {
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    "format": "{0:%H:%M - %A, %d}"
+  "bluetooth": {
+    "format": "󰂲",
+    "format-connected": "󰂯",
+    "format-disabled": "",
+    "interval": 30,
+    "on-click": "kitty -e ~/.config/dmenu-scripts/bluectl.sh",
+    "tooltip-format-connected": "{device_alias}"
   },
 
   "network": {
     "format": "{ifname}",
-    "format-wifi": " ",
-    "format-disconnected": " ",
-    "tooltip-format": "  {ifname} via {gwaddri}",
+    "format-wifi": "",
+    "format-disconnected": "󰅛",
+    "tooltip-format": " {ifname} via {gwaddri}",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n[ {bandwidthDownBytes}  {bandwidthUpBytes}]",
     "tooltip-format-disconnected": "Disconnected",
     "max-length": 50,
@@ -53,27 +54,32 @@
     "format": "{icon}{capacity}%",
     "format-charging": "{icon} {capacity}%",
     "format-plugged": " {capacity}%",
-    "format-alt": "{icon}  {time}",
-    "format-icons": ["󰂎 ", "󰁺 ", "󰁻 ", "󰁼 ", "󰁽 ", "󰁾 ", "󰁿 ", "󰂀 ", "󰂁 ", "󰂂 ", "󰁹 "],
-    "format-icons-charging": [" ", " "]
+    "format-alt": "{icon} {time}",
+    "format-icons": [
+      "󰂎 ",
+      "󰁺 ",
+      "󰁻 ",
+      "󰁼 ",
+      "󰁽 ",
+      "󰁾 ",
+      "󰁿 ",
+      "󰂀 ",
+      "󰂁 ",
+      "󰂂 ",
+      "󰁹 "
+    ]
   },
 
-  "bluetooth": {
-    "format": "󰂯",
-    "format-disabled": "",
-    "format-off": "",
-    "interval": 30,
-    "on-click": "kitty -e ~/.config/dmenu-scripts/bluectl.sh",
-    "tooltip-format-connected": "{device_alias}"
+  "custom/appmenu": {
+    "format": "󰣇",
+    "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings",
+    "on-click": "~/.config/hypr/Scripts/show-ctl-menu.sh",
+    "on-click-right": "~/.config/notscripter/scripts/keybindings.sh",
+    "tooltip": false
   },
 
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "tooltip": true,
-    "format-icons": {
-      "activated": "",
-      "deactivated": ""
-    },
-    "on-click-right": "hyprlock"
+  "group/wireless": {
+    "orientation": "horizontal",
+    "modules": ["bluetooth", "network"]
   }
 }
