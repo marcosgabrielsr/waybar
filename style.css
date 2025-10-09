@@ -2,18 +2,14 @@
 /* Color Configuration */
 /*========================================================================================================*/
 @define-color bordercolor #817E7E;
-@define-color hovercolor #99B7F0;
+@define-color hovercolor #817E7E;
 @define-color buttonbgcolor #FFF;
 @define-color colorbackground #000;
-@define-color redalert #C52E0D;
+@define-color greenalert #60A619;
+@define-color redalert #FF4E2B;
 @define-color yellowactive #F3F863;
-
 @define-color text #cdd6f4;
-@define-color hoverBg alpha(@mauve, 1);
-@define-color hoverFg #000000;
-@define-color activeBg alpha(@mauve, 1);
-@define-color activeFg #000000;
-@define-color shadow alpha(@lavender, 0.25);
+@define-color shadow alpha(@hovercolor, 0.25);
 
 /*========================================================================================================*/
 /* General Configuration */
@@ -46,31 +42,33 @@ window#waybar {
 /* General Modules Configuration*/
 /*========================================================================================================*/
 #workspaces,
-#media,
 #clock,
+#tray,
 #wireless,
+#media,
 #hardware,
 #battery,
 #custom-appmenu {
   border-radius: 999px;
   margin-top: 1px;
   margin-bottom: 1px;
-  background-color: @bordercolor;
+  
 }
 
+#clock,
+#tray,
+#bluetooth,
+#network,
 #media,
 #hardware,
-#clock,
-#battery,
-#bluetooth,
-#network {
-  padding: 0 6px;
+#battery {
+  padding: 0 4px;
 }
 
 #cpu,
 #memory,
 #disk {
-  padding-right: 0.5rem;
+  padding-right: 0.2rem;
 }
 
 /*========================================================================================================*/
@@ -90,7 +88,7 @@ button {
   min-width: 18px;
   min-height: 18px;
   padding: 0;
-  margin: 5px;
+  margin: 4px;
   border-radius: 999px;
   color: @text;
   box-shadow: 0px 0px 6px 3px @shadow inset;
@@ -127,24 +125,35 @@ button.urgent {
 }
 
 /*========================================================================================================*/
+/* Network Configuration*/
+/*========================================================================================================*/
+#network {
+  margin-right: 7px;
+}
+
+/*========================================================================================================*/
+/* Battery Configuration*/
+/*========================================================================================================*/
+#battery.critical {
+  background-color: @redalert;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+#battery.charging {
+  background-color: @greenalert;
+  color: @colorbackground;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+/*========================================================================================================*/
 /* AppMenu Configuration*/
 /*========================================================================================================*/
 #custom-appmenu {
   font-size: 20px;
   min-width: 30px;
   padding-right: 5px;
-}
-
-/*========================================================================================================*/
-/* Battery Configuration*/
-/*========================================================================================================*/
-#battery.critical:not(.charging) {
-  background-color: @activeBg;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
 }
 
 /*========================================================================================================*/

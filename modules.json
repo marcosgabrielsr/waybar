@@ -5,7 +5,7 @@
     "all-outputs": true,
     "format": "{icon}",
     "format-icons": {
-      "urgent": "!",
+      "urgent": "",
       "active": "",
       "default": ""
     },
@@ -16,7 +16,19 @@
   },
 
   "clock": {
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<tt><big><big>{calendar}</big></big></tt>",
+    "calendar": {
+                    "mode"          : "month",
+                    "mode-mon-col"  : 3,
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#f3f863'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#844FC9'><b>{}</b></span>",
+                              "today":      "<span color='#60A619'><b><u>{}</u></b></span>"
+                              }
+                    },
     "format": "{0:%H:%M - %A, %d}"
   },
 
@@ -29,6 +41,7 @@
     "format": "󰂲",
     "format-connected": "󰂯",
     "format-disabled": "",
+    "format-off": "",
     "interval": 30,
     "on-click": "kitty -e ~/.config/dmenu-scripts/bluectl.sh",
     "tooltip-format-connected": "{device_alias}"
@@ -51,8 +64,8 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}{capacity}%",
-    "format-charging": "{icon} {capacity}%",
+    "format": "<big>{icon}</big>{capacity}%",
+    "format-charging": "<big>{icon}</big> {capacity}%",
     "format-plugged": " {capacity}%",
     "format-alt": "{icon} {time}",
     "format-icons": [
