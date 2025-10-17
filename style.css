@@ -19,8 +19,7 @@
   font-size: 12px;
   font-weight: 900;
   font-family:
-    "Material Design Icons",
-    "JetBrainsMono Nerd Font",
+    "JetBrainsMono Nerd Font Mono",
     "Font Awesome 7 Free",
     Roboto,
     Helvetica,
@@ -85,8 +84,8 @@ tooltip {
 /* Workspaces Configuration*/
 /*========================================================================================================*/
 button {
-  min-width: 18px;
-  min-height: 18px;
+  min-width: 15px;
+  min-height: 5px;
   padding: 0;
   margin: 4px;
   border-radius: 999px;
@@ -125,10 +124,25 @@ button.urgent {
 }
 
 /*========================================================================================================*/
+/* Bluetooth Configuration*/
+/*========================================================================================================*/
+#bluetooth.off {
+  font-size: 15px;
+}
+
+#bluetooth.on {
+  font-size: 15px;
+}
+
+#bluetooth.connected {
+  font-size: 13px;
+}
+
+/*========================================================================================================*/
 /* Network Configuration*/
 /*========================================================================================================*/
 #network {
-  margin-right: 7px;
+  font-size: 25px;
 }
 
 /*========================================================================================================*/
@@ -151,7 +165,7 @@ button.urgent {
 /* AppMenu Configuration*/
 /*========================================================================================================*/
 #custom-appmenu {
-  font-size: 20px;
+  font-size: 25px;
   min-width: 30px;
   padding-right: 5px;
 }

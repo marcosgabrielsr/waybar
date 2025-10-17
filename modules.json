@@ -38,10 +38,9 @@
   },
 
   "bluetooth": {
-    "format": "󰂲",
-    "format-connected": "󰂯",
-    "format-disabled": "",
-    "format-off": "",
+    "format-connected": "󰂱",
+    "format-on": "󰂯",
+    "format-off": "󰂲",
     "interval": 30,
     "on-click": "kitty -e ~/.config/dmenu-scripts/bluectl.sh",
     "tooltip-format-connected": "{device_alias}"
@@ -67,7 +66,6 @@
     "format": "<big>{icon}</big>{capacity}%",
     "format-charging": "<big>{icon}</big> {capacity}%",
     "format-plugged": " {capacity}%",
-    "format-alt": "{icon} {time}",
     "format-icons": [
       "󰂎 ",
       "󰁺 ",
