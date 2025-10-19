@@ -83,7 +83,6 @@
 
   "custom/appmenu": {
     "format": "󰣇",
-    "tooltip-format": "Left: Open the application launcher\nRight: Show all keybindings",
     "on-click": "~/.config/hypr/Scripts/show-ctl-menu.sh",
     "on-click-right": "~/.config/notscripter/scripts/keybindings.sh",
     "tooltip": false

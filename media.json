@@ -1,7 +1,16 @@
 {
   "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{volume}% {icon} ",
+    "format": "{volume}%",
+    "format-bluetooth": "{volume}%", 
+    "format-bluetooth-muted": "",
+    "format-muted": "",
+    "scroll-step": 1,
+    "on-click": "pavucontrol"
+  },
+
+  "pulseaudio#icon": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
     "format-bluetooth-muted": " ",
     "format-muted": " ",
     "format-icons": {
@@ -9,17 +18,26 @@
       "hands-free": "",
       "headset": "",
       "phone": "",
-      "portable": "",
-      "car": "",
       "default": [" ", " ", " "]
     },
     "scroll-step": 1,
     "on-click": "pavucontrol"
   },
+
   "pulseaudio#mic": {
-    "format": "{icon} {format_source}",
-    "format-source": " {volume}%",
-    "format-source-muted": " ",
+    "format": "{format_source}",
+    "format-source": "{volume}%",
+    "format-source-muted": "",
+    "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+    "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
+    "on-click-right": "pavucontrol",
+    "on-click": "amixer set Capture toggle"
+  },
+
+  "pulseaudio#icon#mic": {
+    "format": "{format_source}",
+    "format-source": "",
+    "format-source-muted": "",
     "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
     "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
     "on-click-right": "pavucontrol",
@@ -28,6 +46,6 @@
 
   "group/media": {
     "orientation": "horizontal",
-    "modules": ["pulseaudio", "pulseaudio#mic"]
+    "modules": ["pulseaudio", "pulseaudio#icon", "pulseaudio#icon#mic", "pulseaudio#mic"]
   }
 }
